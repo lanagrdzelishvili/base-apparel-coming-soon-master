@@ -9,6 +9,8 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 body {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,11 +19,10 @@ body {
 }
 main {
     background: linear-gradient(150.03deg, #FFFFFF 0%, #FFF4F4 84.51%);
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 375px;
+    /* width: 375px; */
 }
 .logo {
     margin: 34px 180px 34px 34px;
@@ -86,7 +87,7 @@ main {
     height: 50px;
     position: absolute;
     top: -1%;
-    left: 79.42%;
+    left: 79.52%;
     display: flex;
     justify-content: center;
     align-items: center;
