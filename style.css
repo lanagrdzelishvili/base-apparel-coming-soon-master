@@ -1,6 +1,6 @@
 * {
-    line-height: 1;
-    vertical-align: baseline;
+    /* line-height: 1; */
+    /* vertical-align: baseline; */
     border: 0;
     margin: 0;
     padding: 0;
@@ -8,27 +8,32 @@
     list-style: none;
     font-family: 'Josefin Sans', sans-serif;
 }
-body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-image: url("images/bg-pattern-desktop.svg");
-    background-repeat: no-repeat; */
+html {
+    overflow-x: hidden;
 }
-main {
-    background: linear-gradient(150.03deg, #FFFFFF 0%, #FFF4F4 84.51%);
+body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    /* width: 375px; */
+    background: linear-gradient(150.03deg, #FFFFFF 0%, #FFF4F4 84.51%);
+}
+main {
+    width: 100%;
 }
 .logo {
-    margin: 34px 180px 34px 34px;
+    color: #6D728B;
+    margin: 34px 150px 30px 34px;
+}
+.hero-desktop {
+    display: none;
+}
+.images {
+    width: fit-content;
+    margin: 0 auto;
 }
 .we {
-    width: 311px;
+    min-width: 311px;
     margin-top: 60px;
     font-style: normal;
     font-weight: 300;
@@ -39,7 +44,7 @@ main {
     color: #CE9898;
 }
 .coming-soon {
-    width: 311px;
+    min-width: 311px;
     height: 84px;
     font-style: normal;
     font-weight: 600;
@@ -50,7 +55,7 @@ main {
     color: #423A3A;
 }
 .p {
-    width: 311px;
+    min-width: 311px;
     height: 88px;
     margin: 16px 32px 32px 32px;
     font-family: 'Josefin Sans';
@@ -61,14 +66,20 @@ main {
     text-align: center;
     color: #CE9898;
 }
+.form-container {
+    display: flex;
+    justify-content: center;
+}
 #form {
+    max-width: 311px;
+    height: 48px;
     position: relative;
     border: 1px solid #CE9898;
     border-radius: 28px;
     mix-blend-mode: normal;
     opacity: 0.5;
-    padding: 11px 140px 9px 24px;
-    margin-bottom: 92px; 
+    padding: 11px 100px 9px 24px;
+    margin-bottom: 92px;
 }
 #email {
     font-style: normal;
@@ -84,11 +95,98 @@ main {
     box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
     border-radius: 28px;
     width: 66px;
-    height: 50px;
+    height: 48px;
     position: absolute;
-    top: -1%;
+    top: -2%;
     left: 79.52%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+::placeholder {
+  color: #ce9898;
+  mix-blend-mode: normal;
+}
+.arrow:hover {
+    cursor: pointer;
+}
+.error {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 70%;
+}
+
+@media screen and (min-width: 1440px) {
+    .hero-mobile {
+        display: none;
+    }
+    .hero-desktop {
+        display: block;
+    }
+    html {
+        background: #fff7f7;
+    }
+    body {
+        background-image: url("images/bg-pattern-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: 62%;
+    }
+    main {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    header {
+        align-self: start;
+    }
+    .logo {
+        /* padding: 76px 450px 137px 160px; */
+        position: absolute;
+        margin: 0;
+        width: 164px;
+        height: 40px;
+        top: 76px;
+        left: 180px;
+        margin: unset;
+    }
+    .we {
+        margin: 244px 220px 0 220px;
+        min-width: 444px;
+        font-size: 64px;
+        line-height: 64px;
+        text-align: left;
+        letter-spacing: 17.3206px;
+    }
+    .coming-soon {
+        min-width: 444px;
+        height: 128px;
+        font-size: 64px;
+        line-height: 71px;
+        letter-spacing: 17.3206px;
+        margin: 0 220px;
+        text-align: left;
+    }
+    .p {
+        height: 84px;
+        margin: 32px 220px 40px 220px;
+        font-size: 18px;
+        line-height: 32px;
+        text-align: left;
+    }
+    #form {
+        min-width: 445px;
+        height: 56px;
+        padding: 13px 100px 9px 32px;
+    }
+    #email {
+        font-size: 16px;
+        line-height: 28px;
+        min-width: 104px;
+        height: 28px;
+    }
+    .arrow {
+        width: 100px;
+        height: 56px;
+    }
 }
